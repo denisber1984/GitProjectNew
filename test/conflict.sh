@@ -24,7 +24,7 @@ fi
 
 # test port number
 PORT_HASH=$(grep -oP 'port\s*\=\s*\d+' ../app.py | tr -d ' ' | md5sum)
-if [ "$PORT_HASH" != "7cd92569a5359d40fcf3c16b501175e0  -" ]
+if [ "$PORT_HASH" != "7cd92569a5359d40fcf3c16b501175e0 *-" ]
 then
   echo "Bad port"
   exit 1
@@ -33,7 +33,7 @@ fi
 
 # test service price
 SERVICE_PRICE=$(grep -oP '\$\d+' ../app.py | tr -d ' ' | md5sum)
-if [ "$SERVICE_PRICE" != "6e4a214edd3dfd040326c78f3b559f6e  -" ]
+if [ "$SERVICE_PRICE" != "6e4a214edd3dfd040326c78f3b559f6e *-" ]
 then
   echo "Bad service price"
   exit 1
